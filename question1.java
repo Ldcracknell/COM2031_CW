@@ -45,11 +45,23 @@ public class question1 {
         //pointsLessThanDeltaFromL
         Vector[] pLTDFL = new Vector[points.length];
 
-        for(int i = 0; i < points.length; i++){
-            if(Math.abs(points[i].x() - L) < delta){
-                pLTDFL[i] = points[i];
+        int count = 0;
+
+        for (Vector point : points) {
+            if (Math.abs(point.x() - L) < delta) {
+                pLTDFL[count++] = point;
             }
         }
+
+
+        //remove nulls
+        Vector[] temp = new Vector[count];
+        for(int i = 0; i < count; i++){
+            temp[i] = pLTDFL[i];
+        }
+        pLTDFL = temp;
+
+
 
         pLTDFL = sortVectorArrayByY(pLTDFL);
 
