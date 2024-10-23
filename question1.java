@@ -14,6 +14,14 @@ public class question1 {
 
         points = sortVectorArrayByX(points);
 
+        //1, print the sorted array by x as comma separated indices
+        System.out.println("1 - Sorted by x:");
+        for (Vector point : points) {
+            System.out.print(point.x() + ", ");
+        }
+        System.out.println();
+        //
+
         System.out.println(MinDist(points));
     }
 
@@ -34,6 +42,21 @@ public class question1 {
         for(int i = points.length/2; i < points.length; i++){
             right[i - points.length/2] = points[i];
         }
+
+        //print left
+        System.out.println("3 - Left:");
+        for (Vector vector : left) {
+            System.out.print(vector.x() + ", ");
+        }
+        System.out.println();
+        //print right
+        System.out.println("4 - Right:");
+        for (Vector vector : right) {
+            System.out.print(vector.x() + ", ");
+        }
+        System.out.println();
+        //
+
 
         double L = (left[left.length - 1].x() + right[0].x())/2;
 
