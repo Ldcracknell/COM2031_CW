@@ -22,7 +22,9 @@ public class question1 {
         System.out.println();
         //
 
-        System.out.println(MinDist(points));
+
+        //15 - print the minimum distance
+        System.out.println("15 - minimal distance: " + MinDist(points));
     }
 
     static double MinDist(Vector[] points){
@@ -43,13 +45,18 @@ public class question1 {
             right[i - points.length/2] = points[i];
         }
 
-        //print left
+        //2- x coordinate of L (also 5, left then right)
+        System.out.println("2 - x coordinate of L:");
+        System.out.println((left[left.length - 1].x() + right[0].x())/2);
+        //
+
+        //3 - print left
         System.out.println("3 - Left:");
         for (Vector vector : left) {
             System.out.print(vector.x() + ", ");
         }
         System.out.println();
-        //print right
+        //4 - print right
         System.out.println("4 - Right:");
         for (Vector vector : right) {
             System.out.print(vector.x() + ", ");
@@ -84,6 +91,14 @@ public class question1 {
         }
         pLTDFL = temp;
 
+        //10 - print points less than delta from L
+        System.out.println("10 - points in delta strip around Ll:");
+        for (Vector vector : pLTDFL) {
+            System.out.print(vector.x() + ", ");
+        }
+        System.out.println();
+        //
+
 
 
         pLTDFL = sortVectorArrayByY(pLTDFL);
@@ -95,6 +110,11 @@ public class question1 {
                 }
             }
         }
+
+        //? - print delta
+        System.out.println("delta:");
+        System.out.println(delta);
+        //
 
         return delta;
     }
